@@ -132,7 +132,7 @@ class MusicPlayer(object):
     Media = Instance.media_new(song2)
     player.set_media(Media)
     player.play()
-      
+    
 # Creating TK Container
 #root = Tk()
 # Passing Root to MusicPlayer Class

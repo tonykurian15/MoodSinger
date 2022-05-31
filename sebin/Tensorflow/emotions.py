@@ -18,8 +18,8 @@ def main():
         from musicplayer import MusicPlayer
         root = Tk()
         print('\nPlaying ' + emotion_str + ' songs')
-        MusicPlayer(root,emotion_str)
-        root.mainloop()
+        #MusicPlayer(root,emotion_str)
+        # root.mainloop()
 
 
     # Create the model
@@ -58,7 +58,7 @@ def main():
             # start the webcam feed
         cap =cv2.VideoCapture(0, cv2.CAP_DSHOW)
         now = time.time()  ###For calculate seconds of video
-        future = now + 10
+        future = now + 5
         while True:
             # Find haar cascade to draw bounding box around face
             ret, frame = cap.read()
@@ -78,6 +78,7 @@ def main():
                 text = emotion_dict[maxindex]
                 emotion_file.write(emotion_dict[maxindex]+"\n")
                 emotion_file.flush()
+                
 
             cv2.imshow('Video', cv2.resize(frame,(1600,960),interpolation = cv2.INTER_CUBIC))
             if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -87,8 +88,9 @@ def main():
             if time.time() > future:  ##after 10 second music will play
                 cv2.destroyAllWindows()
                 music_player(text)
-                future = time.time() + 10
-                    
-        
+                # future = time.time() + 5
+                break
+
         cap.release()
-main()
+        return text
+mood=main()
