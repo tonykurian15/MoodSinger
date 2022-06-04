@@ -1,7 +1,39 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <h1>TEST</h1>
-        <button><a href="/my-link/">CHECK MA MOOD</button>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodSinger</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}"/>
+</head>
+<body class="main">
+    <header class="header">
+        <div class="logo">
+            <img src="./sale (2).png" alt="">
+        </div>
+        <div class="navbar">
+            <ul class="nav-list">
+                <li class="nav-item">Home</li>-
+                <li class="nav-item">About</li>
+                <li class="nav-item">Contact Us</li>
+            </ul>
+        </div>
+    </header>
+    <div class="main-section">
+        <div class="caption">
+            <p><span>Music</span> touches us <span>Emotionally</span>, where words alone <span>can't</span>.</p>
+        </div>
+        <div class="btn-holder">
+            <button><a class="k" href="/my-link/">Check My MOOD</a></button>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="contact">
+            <h1>Contact</h1>
+            <p class="phone">9988443366</p>
+            <p class="email">mood@gmail.com</p>
+        </div>
+    </footer>
+</body>
 </html>

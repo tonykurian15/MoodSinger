@@ -1,3 +1,4 @@
+import imp
 import numpy as np
 import cv2
 from tensorflow.keras.models import Sequential
@@ -15,7 +16,10 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '4'
 def main():
     #music player function
     def music_player(emotion_str):
-        from musicplayer import MusicPlayer
+        try:
+            from musicplayer import MusicPlayer
+        except:
+            from sebin.Tensorflow.musicplayer import MusicPlayer
         root = Tk()
         print('\nPlaying ' + emotion_str + ' songs')
         #MusicPlayer(root,emotion_str)
