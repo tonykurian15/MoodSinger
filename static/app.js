@@ -3,6 +3,9 @@ var displayBox = document.querySelector(".display-box");
 var mood = document.getElementById("mood");
 var playlistLink = document.getElementById("playlist-link");
 var playlist = document.getElementById("playlist");
+// setTimeout(()=>{
+//   location.reload(20000);
+// },)
 
 fetch('/api/geo_code')
   .then((response) => (response.json()))

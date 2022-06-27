@@ -1,6 +1,7 @@
 import json
-
-from flask import Flask, jsonify, render_template
+import time
+#from selenium import webdriver
+from flask import Flask, jsonify, redirect, render_template, request
 # from sebin.Tensorflow.api import playlist
 # from sebin.Tensorflow.emotions import mood
 import subprocess    #method1
@@ -16,6 +17,10 @@ from test import the_useless_fn #method2 importing the function and
 #     from emotions import mood
 # except:
 #     from sebin.Tensorflow.emotions import mood                              
+
+# driver = webdriver.Chrome()
+# driver.get('http://youtube.com')
+
 
 app = Flask(__name__)
 
@@ -44,15 +49,22 @@ def my_link():
 
 @app.route("/api/geo_code")
 
+  
 def geo_code():
+  
   with open('MyRecords.json', 'r+') as f:
     data = json.load(f)
   md={
     'mood' : data['mood'],
     'play' : data['play']
   }
-
+  
   return jsonify(md)
+  #return render_template('page2.html')
+
+# time.sleep(20)
+# driver.refresh()
+
 
 
 if __name__ == '__main__':
